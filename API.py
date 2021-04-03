@@ -12,8 +12,8 @@ class API:
         self.driver = driver
         self.LoggingIn = False
         self.StreamerList = {
-            "Suspect": 2,
-            "NoraExplorer": 2,
+            "Suspect": 0,
+            "NoraExplorer": 0,
             "etoleto": 0,
             "Picco": 0,
             "PyrooTv": 0,
