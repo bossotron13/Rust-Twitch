@@ -73,6 +73,15 @@ class API:
                 return True
 
 
+    def BagItem(self):
+        Bagged = False
+        while True:
+            if self.check_if_exists("//div[text()='Claim Now']"):
+                self.driver.find_element_by_xpath("//div[text()='Claim Now']").click()
+                Bagged = True
+            else:
+                break
+        return Bagged
     
     def isLogged(self) -> None:
         while True:
