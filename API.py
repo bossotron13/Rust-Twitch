@@ -42,7 +42,7 @@ class API:
     
     def isLoggedin(self) -> bool:
         for x in self.driver.get_cookies():
-            if x["value"].lower() == "ezytap":
+            if x["value"].lower() == "Twitch name here":
                 return True
         return False
 
