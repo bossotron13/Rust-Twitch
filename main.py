@@ -16,7 +16,7 @@ class API:
             "Suspect": 0,
             "NoraExplorer": 0,
             "etoleto": 0,
-            "Picco": 0
+            "Picco": 0,
             "PyrooTv": 0,
             "6zdenko": 0
         }
@@ -44,7 +44,7 @@ class API:
     
     def isLoggedin(self) -> bool:
         for x in driver.get_cookies():
-            if x["value"].lower() == "Streamer name here":
+            if x["value"].lower() == "Twitch Name here":
                 return True
         return False
 
@@ -83,7 +83,7 @@ driver = webdriver.Edge(PATH)
 API = API()
 while True:
     for x in API.StreamerList:
-        if API.gotoStreamer(x):
+        if API.gotoStreamer(x) and self.StreamerList[x] < 2:
             if API.CreateTimer(x):
                 print("Bagged {} item".format(x))
 
