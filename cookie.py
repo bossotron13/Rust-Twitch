@@ -1,1 +1,1 @@
-cookies = ['''Cookies removed due to security reasons''']
+cookies = ['''Cookies removed due to security''']
