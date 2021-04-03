@@ -76,6 +76,7 @@ class API:
     def BagItem(self):
         Bagged = False
         self.driver.get("https://www.twitch.tv/drops/inventory")
+        time.sleep(1)
         while True:
             if self.check_if_exists("//div[text()='Claim Now']"):
                 self.driver.find_element_by_xpath("//div[text()='Claim Now']").click()
