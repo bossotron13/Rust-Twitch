@@ -13,6 +13,7 @@ while True:
             if API.gotoStreamer(x):
                 if API.CreateTimer(x):
                     print("Bagged {} item".format(x))
+        time.sleep(2)
 
 
 
