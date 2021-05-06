@@ -12,12 +12,15 @@ class API:
         self.driver = driver
         self.LoggingIn = False
         self.StreamerList = {
-            "Suspect": 0,
-            "NoraExplorer": 0,
-            "etoleto": 0,
-            "Picco": 0,
-            "PyrooTv": 0,
-            "6zdenko": 0
+            "imPheetus": 0,
+            "BaboAbe": 0,
+            "fuslie": 0,
+            "itsBigChase": 0,
+            "peterparkTV": 0,
+            "Enardo": 0,
+            "Shiphtur": 0,
+            "spoonkid": 0,
+            "Masayoshi": 0
         }
 
         self.Threads()
