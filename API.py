@@ -8,6 +8,7 @@ class API:
         self.TwitchPath = "https://twitch.tv/"
         self.Live = '//*[@id="root"]/div/div[2]/div/main/div[2]/div[3]/div/div/div[1]/div[1]/div[2]/div/div[1]/div/div/div/div[1]/div/div/a/div[2]/div/div/div'
         self.WatchBc = '//*[@id="root"]/div/div[2]/div/main/div[2]/div[3]/div/div/div[2]/div/div[2]/div/div/div/div[5]/div/div[3]/button/div/div'
+        self.isRust = '//*[@id="root"]/div/div[2]/div/main/div[2]/div[3]/div/div/div[1]/div[1]/div[2]/div/div[1]/div/div/div/div[2]/div[2]/div[1]/div/div[2]/div/div/div[1]/a/span'
         self.Cookie = cookies
         self.driver = driver
         self.LoggingIn = False
@@ -52,7 +53,7 @@ class API:
     def gotoStreamer(self, streamer: str) -> bool:
         self.driver.get(self.TwitchPath + streamer)
         time.sleep(1)
-        if self.check_if_exists(self.Live):
+        if self.check_if_exists(self.Live) and self.driver.find_element_by_xpath(self.isRust).text.lower() == "rust":
             return True
         return False
 
@@ -79,7 +80,7 @@ class API:
     def BagItem(self):
         Bagged = False
         self.driver.get("https://www.twitch.tv/drops/inventory")
-        time.sleep(1)
+        time.sleep(4)
         while True:
             if self.check_if_exists("//div[text()='Claim Now']"):
                 self.driver.find_element_by_xpath("//div[text()='Claim Now']").click()
